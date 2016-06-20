@@ -20,19 +20,47 @@ let g:elrond#cursorline16 = get(g:, 'elrond#cursorline16' , 'bold')
 
 hi Normal     guifg=#fafafa  guibg=black
 
-hi Comment    term=italic    ctermfg=DarkCyan        guifg=#80a0ff
+hi Comment    term=italic    ctermfg=Blue    guifg=#80a0ff
 hi Constant   term=underline ctermfg=Magenta         guifg=Magenta
 hi Special    term=bold      ctermfg=DarkMagenta     guifg=Red
-hi Identifier term=underline cterm=bold ctermfg=Cyan guifg=#40ffff
-hi Statement  term=bold      ctermfg=Yellow gui=bold guifg=#aa4444
+hi Identifier                ctermfg=179 guifg=#40ffff
+hi Keyword  term=bold      ctermfg=Yellow gui=bold guifg=#aa4444
 hi PreProc    term=underline ctermfg=LightBlue       guifg=#ff80ff
-hi Type       term=underline ctermfg=LightGreen      guifg=#60ff60 gui=bold
-hi Function   term=bold      ctermfg=White           guifg=White
-hi Repeat     term=underline ctermfg=White           guifg=white
+hi Type       term=underline ctermfg=Cyan      guifg=#60ff60 gui=bold
+hi Function   term=bold      ctermfg=Green           guifg=White
 hi Operator                  ctermfg=Red             guifg=Red
 hi Ignore                    ctermfg=black           guifg=bg
 hi Error      term=reverse   ctermbg=Red    ctermfg=White guibg=Red  guifg=White
-hi Todo       term=standout  ctermbg=Yellow ctermfg=Black guifg=Blue guibg=Yellow
+hi Todo       term=standout  ctermbg=Yellow ctermfg=20 guifg=Blue guibg=Yellow
+
+" CoffeeScript specific stuff
+hi coffeeRequire ctermfg=57 term=bold
+hi String ctermfg=13
+hi Number ctermfg=5
+hi link Float          Number
+
+hi Conditional ctermfg=40 term=bold
+hi link Repeat Conditional
+
+hi Statement ctermfg=154 term=bold
+hi link Exception Statement
+
+hi Boolean ctermfg=92 term=bold term=standout
+
+hi link Character      Constant
+hi link Label          Keyword
+hi link Include        PreProc
+hi link Define         PreProc
+hi link Macro          PreProc
+hi link PreCondit      PreProc
+hi link StorageClass   Type
+hi link Structure      Type
+hi link Typedef        Type
+hi link Tag            Special
+hi link SpecialChar    Special
+hi link Delimiter      Special
+hi link SpecialComment Special
+hi link Debug          Special
 
 highlight CursorLine NONE
 
@@ -116,24 +144,3 @@ highlight LiningWarn  ctermbg=Brown ctermfg=Yellow
 highlight LiningError ctermbg=Red   ctermfg=White
 highlight link LiningVcsInfo LiningItem
 
-hi link String         Constant
-hi link Character      Constant
-hi link Number         Constant
-hi link Boolean        Constant
-hi link Float          Number
-hi link Conditional    Repeat
-hi link Label          Statement
-hi link Keyword        Statement
-hi link Exception      Statement
-hi link Include        PreProc
-hi link Define         PreProc
-hi link Macro          PreProc
-hi link PreCondit      PreProc
-hi link StorageClass   Type
-hi link Structure      Type
-hi link Typedef        Type
-hi link Tag            Special
-hi link SpecialChar    Special
-hi link Delimiter      Special
-hi link SpecialComment Special
-hi link Debug          Special
